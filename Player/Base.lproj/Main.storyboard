@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dad-eq-eRa">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="6T4-iB-b8y">
+            <objects>
+                <navigationController id="dad-eq-eRa" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Hn-t5-jwi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kvL-xr-5cn" kind="relationship" relationship="rootViewController" id="kwa-sQ-TwW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CGe-0B-Kot" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-284.5" y="1781.5"/>
+        </scene>
+        <!--CellPlayer-->
+        <scene sceneID="Hd2-BZ-gCU">
+            <objects>
+                <tableViewController id="kvL-xr-5cn" customClass="YTTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="253" sectionHeaderHeight="28" sectionFooterHeight="28" id="wp7-Hj-ir6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="playerCell" rowHeight="253" id="n1N-oP-Xmf" customClass="YTPlayerCell">
+                                <rect key="frame" x="0.0" y="92" width="375" height="253"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n1N-oP-Xmf" id="NN7-Lp-cAu">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="252"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading_bgView" translatesAutoresizingMaskIntoConstraints="NO" id="pD7-PJ-791">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="pD7-PJ-791" secondAttribute="height" multiplier="16:9" priority="750" id="2HP-yA-djd"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTs-G7-mrF">
+                                            <rect key="frame" x="18" y="224" width="339" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hR-H9-xDa">
+                                            <rect key="frame" x="163" y="82" width="50" height="50"/>
+                                            <state key="normal" image="video_list_cell_big_icon"/>
+                                            <connections>
+                                                <action selector="play:" destination="n1N-oP-Xmf" eventType="touchUpInside" id="9IW-30-8WS"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="pD7-PJ-791" secondAttribute="trailing" id="GOw-qd-Iw1"/>
+                                        <constraint firstItem="hTs-G7-mrF" firstAttribute="leading" secondItem="NN7-Lp-cAu" secondAttribute="leading" constant="18" id="WcE-Ac-qQc"/>
+                                        <constraint firstAttribute="trailing" secondItem="hTs-G7-mrF" secondAttribute="trailing" constant="18" id="XE9-ah-o0w"/>
+                                        <constraint firstItem="pD7-PJ-791" firstAttribute="top" secondItem="NN7-Lp-cAu" secondAttribute="top" id="ZHS-5r-90F"/>
+                                        <constraint firstItem="pD7-PJ-791" firstAttribute="leading" secondItem="NN7-Lp-cAu" secondAttribute="leading" id="cV1-5n-Kcw"/>
+                                        <constraint firstItem="8hR-H9-xDa" firstAttribute="centerY" secondItem="pD7-PJ-791" secondAttribute="centerY" id="enY-da-Hpk"/>
+                                        <constraint firstItem="hTs-G7-mrF" firstAttribute="top" secondItem="pD7-PJ-791" secondAttribute="bottom" constant="10" id="mxQ-t7-H4B"/>
+                                        <constraint firstItem="8hR-H9-xDa" firstAttribute="centerX" secondItem="pD7-PJ-791" secondAttribute="centerX" id="ufd-LF-BnL"/>
+                                        <constraint firstAttribute="bottom" secondItem="hTs-G7-mrF" secondAttribute="bottom" constant="10" id="vXB-gG-obF"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="picView" destination="pD7-PJ-791" id="kYe-9s-Mlc"/>
+                                    <outlet property="playBtn" destination="8hR-H9-xDa" id="3Bh-8s-K2V"/>
+                                    <outlet property="titleLabel" destination="hTs-G7-mrF" id="5QL-qi-TFr"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kvL-xr-5cn" id="2Az-Ml-81i"/>
+                            <outlet property="delegate" destination="kvL-xr-5cn" id="wxx-ye-svx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="CellPlayer" id="5rR-iU-uSZ"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="crS-eQ-33G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="176.5" y="1768.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="loading_bgView" width="1136" height="640"/>
+        <image name="video_list_cell_big_icon" width="50" height="50"/>
+    </resources>
+</document>
